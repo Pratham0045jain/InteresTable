@@ -1,0 +1,157 @@
+<html>
+
+<head>
+
+    <title>Profile</title>
+
+    <script src="form.js"></script>
+
+    <link rel="stylesheet" href="SignInClick.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- configuration -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+                    https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCl4LES-rr-zGP9ifg_fTvW4hTCM3U2a6g",
+            authDomain: "form-1cd7c.firebaseapp.com",
+            databaseURL: "https://form-1cd7c.firebaseio.com",
+            projectId: "form-1cd7c",
+            storageBucket: "form-1cd7c.appspot.com",
+            messagingSenderId: "382448791273",
+            appId: "1:382448791273:web:f623c3dd287c5454c80a78"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        function getData() {
+            firebase.database().ref('/').once('value', function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    var childKey = childSnapshot.key;
+                    var childData = childSnapshot.val();
+                    document.getElementById("data").innerHTML = childData['name'] + ", " + childData['age'];
+                    document.getElementById("data1").innerHTML = childData['name'];
+                })
+            })
+        }
+
+        getData();
+    </script>
+
+
+    <!-----------------navbar section---------------------------->
+
+    <section id="nav-bar">
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src="images2/logo2.png" height="80"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#top">
+                            <p id="data"></p><span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">LOG OUT</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <!-----------------banner section---------------------------->
+
+    <section id="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="promo-title">Hi there,</p>
+                    <p class="promo-title1" id="data1"></p>
+
+                    <p class="promo-title2">This is a platform where you will learn how to manage the time! A
+                        personalised timetabe for you....</p>
+                    <p>
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <img src="images2/study.png" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <img src="images/wave.png" class="bottom-img">
+    </section>
+
+    <!----------------Services section-------------------------------->
+
+    <section id="services">
+        <div class="container text-center">
+            <h1 class="title">WHAT YOU HAVE TO DO</h1>
+            <p>
+            <h1></h1>
+            </p>
+            <div class="row text-center">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="images2/calendar.png" class="service-img">
+                        <h4>Timetable</h4>
+                        <p>Managing time in a school is important to optimize the learning experience of the students
+                            and to gain the optimal use of resources. However, that doesn’t justify the hundreds of
+                            hours your staff has to spend on managing timetables for classes and courses. Therefore
+                            first we settle the timetable.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="images2/testpaper.png" class="service-img">
+                        <p></p>
+                        <p></p>
+                        <h4>Regular tests</h4>
+                        <p>We take regular tests to ensure the deeper learning of a child. We believe that standardized
+                            testing can benefit students—as long as it’s looked at in the right light. Below we’ll
+                            discuss some of the benefits of standardized assessments, as well as some of the ways
+                            standardised assessments can be negative for students.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="images2/reporcard.png" class="service-img">
+                        <h4>Best results</h4>
+                        <p>Colleges and scholarship committees will review your teen's transcripts. Better grades,
+                            higher test scores, and involvement in a variety of activities can help your teen get more
+                            money for college.If your teen strives to do well in anything set before her, she'll have
+                            more career opportunities. Many teens just don't see the need to do well in school.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+     <!--------smmoth---------->
+
+     <script src="smooth-scroll.js"></script>
+     <script>
+         var scroll = new SmoothScroll('a[href*="#"]');
+     </script>
+    
+    
+</body>
+
+</html>

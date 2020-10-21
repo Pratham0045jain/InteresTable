@@ -1,3 +1,4 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Sansita+Swashed:wght@700&display=swap'); */
 *{
     margin: 0;
     padding: 0;
@@ -11,7 +12,7 @@ body{
     z-index:10; 
 }
 .navbar{
-    background-image: linear-gradient(to right, #a517ba,#5f1782);
+    background-image: linear-gradient(to right, #5f1782,#f99704);
     padding: 0 !important;
 }
 navbar-brand img{
@@ -37,7 +38,7 @@ navbar-brand img{
 /*-----------------banner section----------------------------*/
 
 #banner{
-    background-image: linear-gradient(to right, #a517ba,#5f1782);
+    background-image: linear-gradient(to right, #5f1782,#f99704);
     color: #fff;
     padding-top: 5%;
 }
@@ -46,6 +47,15 @@ navbar-brand img{
     font-weight: 600;
     margin-top: 100px;
 }
+ #banner .btn-primary{
+    width: 200px; 
+    height: 50px;
+    box-shadow: none;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 20px;
+    background-color: #F89605;
+} 
 .bottom-img{
     width: 100%;
 }
@@ -78,7 +88,7 @@ h4{
 }
 .title::after{
     content: '';
-    background: #7b1798;
+    background: #f99704;
     height: 10px;
     width: 50px;
     margin-left:auto;
@@ -87,13 +97,7 @@ h4{
     display: block;
     transform: translateY(8px);
 }
-#services .btn-primary{
-    box-shadow: none;
-    padding: 8px 25px;
-    border: none;
-    border-radius: 20px;
-    background-image: linear-gradient(to right, #a517ba,#5f1782);
-}
+
 
 /*---------------------------------about me-----------*/
 
@@ -120,7 +124,7 @@ h4{
     margin: 100px 0;
 }
 .testimonials{
-    border-left: 4px solid #7b1798;
+    border-left: 4px solid #f99704;
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -157,18 +161,19 @@ h4{
 /*---------------------------------footer-----------*/
 
 #footer{
-    background-image: linear-gradient(to right, #a517ba,#5f1782);
+    background-image: linear-gradient(to right, #5f1782,#f99704);
     color: #fff;
 }
 .footer-img{
-    width: 110%;
+    width: 100%;
     transform: rotate(180deg);
 }
 .footer-box{
     padding: 20px;
 }
 .footer-box img{
-    width: 120px;
+    width: 200px;
+    height: 80px;
     margin-bottom: 20px;
 }
 .footer-box .fa{
@@ -179,7 +184,7 @@ h4{
     text-align: center;
     padding-top: 7px;
     border-radius: 2px;
-    background-image: linear-gradient(to right, #a517ba,#5f1782);
+    background-image: linear-gradient(to right, #f99704,#5f1782);
 }
 .footer-box .form-control{
     box-sizing: none !important;
@@ -192,6 +197,26 @@ h4{
     box-sizing: none !important;
     border: none;
     border-radius: 0;
-    margin-top: 30px;
-    background-image: linear-gradient(to right, #a517ba,#5f1782);
+    margin-left: 45px;
+    margin-top: 20px;
+    background-color: #611981;
+}
+#footer .btn-primary{
+    box-shadow: none;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 20px;
+    background-color: #611981;
+} 
+::-webkit-input-placeholder{
+    color: #000000;
+    font-family: 'Sansita Swashed', cursive;
+}
+::-moz-input-placeholder{
+    color: #000000;
+    font-family: 'Sansita Swashed', cursive;
+}
+::-ms-input-placeholder{
+    color: #000000;
+    font-family: 'Sansita Swashed', cursive;
 }
