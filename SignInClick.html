@@ -2,7 +2,8 @@
 
 <head>
 
-    <title>Profile</title>
+    <title>InteresTable</title>
+    <link rel="icon" type="image/png" href="images2/titleLogo.png">
 
     <script src="form.js"></script>
 
@@ -17,6 +18,10 @@
 </head>
 
 <body>
+
+    <script>
+        var x = 0;
+    </script>
 
     <!-- configuration -->
 
@@ -51,6 +56,17 @@
             })
         }
 
+
+        function writeProfileData() {
+            firebase.database().ref("User").push([{
+                timetable: "test"
+            }]).then(function () { });
+
+
+            /* window.location.assign("index2.html"); */
+
+        }
+
         getData();
     </script>
 
@@ -73,7 +89,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index">LOG OUT</a>
+                        <a class="nav-link" href="index.html">LOG OUT</a>
+                        <!-----------------make it index only---------------------------->
+                        <button onClick="writeProfileData()">test</button>
                     </li>
                 </ul>
             </div>
@@ -117,8 +135,8 @@
                         <h4>Timetable</h4>
                         <p>Managing time in a school is important to optimize the learning experience of the students
                             and to gain the optimal use of resources. However, that doesn’t justify the hundreds of
-                            hours your staff has to spend on managing timetables for classes and courses. Therefore
-                            first we settle the timetable.</p>
+                            hours your staff has to spend on managing timetables
+                            for classes and courses. Therefore first we settle the timetable.</p>
                     </div>
                     <div class="col-md-4">
                         <img src="images2/testpaper.png" class="service-img">
@@ -127,16 +145,17 @@
                         <h4>Regular tests</h4>
                         <p>We take regular tests to ensure the deeper learning of a child. We believe that standardized
                             testing can benefit students—as long as it’s looked at in the right light. Below we’ll
-                            discuss some of the benefits of standardized assessments, as well as some of the ways
-                            standardised assessments can be negative for students.</p>
+                            discuss some of the benefits of standardized assessments,
+                            as well as some of the ways standardised assessments can be negative for students.</p>
                     </div>
                     <div class="col-md-4">
                         <img src="images2/reporcard.png" class="service-img">
                         <h4>Best results</h4>
                         <p>Colleges and scholarship committees will review your teen's transcripts. Better grades,
                             higher test scores, and involvement in a variety of activities can help your teen get more
-                            money for college.If your teen strives to do well in anything set before her, she'll have
-                            more career opportunities. Many teens just don't see the need to do well in school.</p>
+                            money for college.If your teen strives to do well
+                            in anything set before her, she'll have more career opportunities. Many teens just don't see
+                            the need to do well in school.</p>
                     </div>
                 </div>
             </div>
@@ -144,14 +163,179 @@
         </div>
     </section>
 
-     <!--------smmoth---------->
+    <!-----------------table---------------------------->
 
-     <script src="smooth-scroll.js"></script>
-     <script>
-         var scroll = new SmoothScroll('a[href*="#"]');
-     </script>
-    
-    
+
+    <table class="content-table" id="blur">
+
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday!</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>6:00 TO 7:00</td>
+                <td data-href="#1" onclick="toggle1()">Maths</td>
+                <td data-href="#1" onclick="toggle2()">English</td>
+                <td data-href="#1" onclick="toggle2()">English</td>
+                <td data-href="#1" onclick="toggle2()">English</td>
+                <td data-href="#1" onclick="toggle2()">English</td>
+                <td data-href="#1" onclick="toggle2()">English</td>
+                <td data-href="#1" onclick="toggle2()">English</td>
+            </tr>
+            <tr class=" active-row ">
+                <td>6:00 TO 7:00</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+            </tr>
+            <tr>
+                <td>6:00 TO 7:00</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+            </tr>
+            <!-- <tr class="active-row ">
+                <td>6:00 TO 7:00</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+            </tr>
+            <tr>
+                <td>6:00 TO 7:00</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+            </tr>
+            <tr class="active-row ">
+                <td>6:00 TO 7:00</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+            </tr>
+            <tr>
+                <td>6:00 TO 7:00</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+                <td>6000</td>
+            </tr>
+            <tr class="active-row ">
+                <td>6:00 TO 7:00</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+                <td>5150</td>
+            </tr> -->
+            <!-- and so on... -->
+        </tbody>
+    </table>
+
+    <!-- For the popup part -->
+
+    <div class="container1" id="blur">
+        <div class="content">
+
+        </div>
+    </div>
+
+    <div id="popup">
+        <h2>You need to study Maths now</h2>
+        <p>
+            <ulpopup>
+                <li>Do Exercise 14.1</li>
+                <li>Do factorisation</li>
+                </ul>
+                <a href="#1" onclick="toggle1()">Read More</a>
+        </p>
+    </div>
+
+    <div id="popup2">
+        <h2>You need to study english now</h2>
+        <p>
+            <ulpopup>
+                <li>Do The Jody's fawn</li>
+                <li>Learn that chapter</li>
+                </ul>
+                <a href="#1" onclick="toggle2()">Read More</a>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        //for (let x = 2; x < 10; x++) {
+        function toggle1() {
+            var blur = document.getElementById("blur");
+            blur.classList.toggle("active");
+            var popup = document.getElementById("popup")
+            popup.classList.toggle("active");
+        }
+        function toggle2() {
+
+            var blur = document.getElementById("blur");
+            blur.classList.toggle("active");
+            var popup = document.getElementById("popup2");
+            popup.classList.toggle("active");
+        }
+        //}
+
+        /* For making the cells as hyperlinks   */
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const cells = document.querySelectorAll("td[data-href]");
+
+            cells.forEach(cell => {
+                cell.addEventListener("click", () => {
+                    window.location.href = cell.dataset.href;
+                });
+            });
+
+        });
+    </script>
+
+    <!--------smmoth---------->
+
+    <script src="smooth-scroll.js "></script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="# "]');
+    </script>
+
+
 </body>
 
 </html>

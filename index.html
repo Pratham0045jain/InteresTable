@@ -1,9 +1,9 @@
 <html>
 
 <head>
-    <title>
-        InteresTable
-    </title>
+    <title>InteresTable</title>
+    <link rel="icon" type="image/png" href="images2/titleLogo.png">
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
@@ -44,7 +44,7 @@
                         <a class="nav-link" href="#testimonials">OUR ROLE MODELS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#footer">LOGIN</a>
+                        <a class="nav-link" href="#footer">ABOUT US</a>
                     </li>
                 </ul>
             </div>
@@ -62,7 +62,8 @@
                     <p>This is a platform where your kid will learn how to manage the time! a personalised timetabe for
                         each and every student...</p>
                     <p>
-                        <a href="index1.html"><button type="button" class="btn btn-primary">Sign Up now!</button></p>
+                        <!-- <a href="signUp.html"><button type="button" class="btn btn-primary">Sign Up now!</button></p> -->
+                    <!-----------------make it index only---------------------------->
                     </a>
                 </div>
 
@@ -90,8 +91,8 @@
                         <h4>Timetable</h4>
                         <p>Managing time in a school is important to optimize the learning experience of the students
                             and to gain the optimal use of resources. However, that doesn’t justify the hundreds of
-                            hours your staff has to spend on managing timetables for classes and courses. Therefore
-                            first we settle the timetable.</p>
+                            hours your staff has to spend on managing timetables
+                            for classes and courses. Therefore first we settle the timetable.</p>
                     </div>
                     <div class="col-md-4">
                         <img src="images2/testpaper.png" class="service-img">
@@ -100,16 +101,17 @@
                         <h4>Regular tests</h4>
                         <p>We take regular tests to ensure the deeper learning of a child. We believe that standardized
                             testing can benefit students—as long as it’s looked at in the right light. Below we’ll
-                            discuss some of the benefits of standardized assessments, as well as some of the ways
-                            standardised assessments can be negative for students.</p>
+                            discuss some of the benefits of standardized assessments,
+                            as well as some of the ways standardised assessments can be negative for students.</p>
                     </div>
                     <div class="col-md-4">
                         <img src="images2/reporcard.png" class="service-img">
                         <h4>Best results</h4>
                         <p>Colleges and scholarship committees will review your teen's transcripts. Better grades,
                             higher test scores, and involvement in a variety of activities can help your teen get more
-                            money for college.If your teen strives to do well in anything set before her, she'll have
-                            more career opportunities. Many teens just don't see the need to do well in school.</p>
+                            money for college.If your teen strives to do well
+                            in anything set before her, she'll have more career opportunities. Many teens just don't see
+                            the need to do well in school.</p>
                     </div>
                 </div>
             </div>
@@ -194,7 +196,8 @@
                     <p><i class="fa fa-envelope-o"></i> deepakjain@gmail.com</p>
                 </div>
                 <div class="col-md-4 footer-box">
-                    <p><b>Login</b></p>
+
+                    <!-- <p><b>Login</b></p>
                     <p><input type="text" placeholder="           Your name" id="nameField"></p>
 
                     <p><input type="number" placeholder="           Your grade" id="ageField"></p>
@@ -205,7 +208,7 @@
 
                     <p>
                         <button onClick="signIn(),writeData()" id="Sign In" class="btn btn-primary">LogIn</button>
-                    </p>
+                    </p> -->
 
                     <!-- configuration -->
 
@@ -230,10 +233,10 @@
                         firebase.initializeApp(firebaseConfig);
 
                         function writeData() {
-                            firebase.database().ref("User").set({
+                            firebase.database().ref("User").push([{
                                 name: document.getElementById("nameField").value,
                                 age: document.getElementById("ageField").value
-                            }).then(function () {
+                            }]).then(function () {
                                 window.location.assign("SignInClick.html");
                             });
 
@@ -241,9 +244,7 @@
                             /* window.location.assign("index2.html"); */
 
                         }
-
                     </script>
-
                 </div>
             </div>
         </div>
